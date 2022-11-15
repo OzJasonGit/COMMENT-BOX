@@ -55,18 +55,20 @@ body {
 /*******************************************************************/
 #MAIN-CONTAINER {
     width: 90vw;
-    height: 100%;
+    height: auto;
     display: grid;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+    place-items: center;
 
     grid-column-gap: 40px;
     grid-row-gap: 40px;
     grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: ". MAIN_TITLE ."
+    grid-template-rows: 100px auto 1fr 100px;
+    grid-template-areas: ". . ."
+                         ". MAIN_TITLE ."
                          ". COMMENT_BOX .";
 }
 
@@ -76,10 +78,12 @@ body {
     width: 100%;
     height: auto;
     display: grid;
+    place-items: center;
     grid-area: MAIN_TITLE;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 40px;
     grid-template-areas: "TITLE TITLE TITLE ";
+    max-width: 700px;
 }
 
 
@@ -87,6 +91,7 @@ body {
     grid-area: TITLE;
     width: 100%;
     height: auto;
+    max-width: 700px;
 }
 
 
@@ -114,6 +119,70 @@ body {
     height: auto;   
 }
 
+
+
+#COMMENT_BOX {
+    grid-area: COMMENT_BOX;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "MAIN_TITLE MAIN_TITLE MAIN_TITLE";
+    max-width: 700px; 
+    ;
+}
+
+
+#COMMENT_GRID {
+    grid-area: MAIN_TITLE;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 40px 10px 70px 30px 40px 10px 70px 30px 300px;
+    grid-row-gap: 0px;    
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "TITLE-1" 
+    "."
+    "TEXT-AREA-1"
+    "."
+    "TITLE-2"
+    "."
+    "TEXT-AREA-2"
+    "."
+    "COMMENT-AREA";
+
+}
+
+
+
+#COMMENT-AREA {
+    grid-area: COMMENT-AREA;
+    width: 100%;
+    height: 100%;
+}
+
+
+#TEXT-AREA-1 {
+    grid-area: TEXT-AREA-1;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#TEXT-AREA-2 {
+    grid-area: TEXT-AREA-2;
+    width: 100%;
+    height: 100%;
+}
+
+.TEXT-AREA {
+    grid-area: COMMENT-AREA;
+    width: 100%;
+    height: 100%;
+}
 
 
 /******************************FONTS***************************/
