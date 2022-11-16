@@ -140,7 +140,7 @@ body {
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-rows: 40px 10px 70px 30px 40px 10px 70px 30px 300px;
+    grid-template-rows: 40px 10px 70px 30px 40px 10px 70px 30px 300px 30px 70px;
     grid-row-gap: 0px;    
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -152,7 +152,9 @@ body {
     "."
     "TEXT-AREA-2"
     "."
-    "COMMENT-AREA";
+    "COMMENT-AREA"
+    "."
+    "SUBMIT-BUTTON";
 
 }
 
@@ -203,7 +205,9 @@ body {
     grid-area: TITLE-2;
 }
 
-
+#BUTTON {
+    grid-area: SUBMIT-BUTTON;
+}
 
 
 
