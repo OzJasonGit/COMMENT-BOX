@@ -21,18 +21,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-<body>
-   
+<body>   
     <!---------------------------------------------------------------------------------------------------->
     <div class="center-holder">
         <div id="MAIN-CONTAINER">
@@ -53,37 +42,50 @@
                 
                     <h3 id="LABEL-1><label">Name</label></h3>
                     <form id="TEXT-AREA-1">
-                        <textarea class="TEXT-AREA"  placeholder="What should we call you?">
-                        </textarea>                       
+                        <input  type="text"  id="full-name" class="TEXT-AREA"  placeholder="Full Name">
+                    </input>                       
                     </form>
                 
 
                     <h3 id="LABEL-2"><label>Email Address</label></h3>
                     <form id="TEXT-AREA-2">
-                        <textarea class="TEXT-AREA"  placeholder="What's your email address">       
-                        </textarea>                  
+                        <input  type="text"  id="email-address"  class="TEXT-AREA"  placeholder="darth.vader@deathstar.com"> <p id='result'></p>       
+                    </input>                  
                     </form>
                 
                     
                     <form id="COMMENT-AREA">
-                        <textarea placeholder="Tell us about yourself..." class="TEXT-AREA"  >
+                        <textarea id="comments" class="TEXT-AREA">
                         </textarea>   
                     </form>
 
                     <button id="BUTTON">
                         <h3>SUBMIT!</h3>                       
                     </button>
-                
-                </div>
-            </div>
+
+
+
+                    <script>
+                        const name = document.querySelector('#full-name');
+                        const emailAddress = document.querySelector('#email-address');
+                        const comments = document.querySelector('#comments');
+                        
+                        
+                        const result = document.querySelector('#result');
+                        message.addEventListener('input', function () {
+                            result.textContent = this.value;
+                        });
+                    </script>
+                    
+                    
             
             <!---------------------------------------->
 
             <div id="ANSWERS">
 
-            </div>
-        
-    <!------------------------------------------------------------------------------------------------>    
-    
+            </div>       
+    <!------------------------------------------------------------------------------------------------>       
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

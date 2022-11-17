@@ -41,7 +41,7 @@ body {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-color: rgb(237, 216, 247);
+    background-color: rgb(236, 236, 236);
 }
 /*******************************************************************/
 
@@ -140,7 +140,7 @@ body {
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-rows: 40px 10px 70px 30px 40px 10px 70px 30px 300px 30px 70px;
+    grid-template-rows: 40px 10px 50px 10px 40px 10px 50px 10px 300px 10px 70px;
     grid-row-gap: 0px;    
     grid-template-columns: 1fr;
     grid-template-areas: 
@@ -170,6 +170,8 @@ body {
     grid-area: COMMENT-AREA;
     width: 100%;
     height: 100%;
+    outline: 2px solid rgb(174, 176, 36, );
+    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
 }
 
 #COMMENTS {
@@ -183,6 +185,9 @@ body {
     grid-area: TEXT-AREA-1;
     width: 100%;
     height: 100%;
+    outline: 2px solid rgb(174, 176, 36,);
+    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
+
 }
 
 
@@ -191,12 +196,15 @@ body {
     grid-area: TEXT-AREA-2;
     width: 100%;
     height: 100%;
+    outline: 2px solid rgb(174, 176, 36, );
+    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
 }
 
 
 
 #LABEL-1 {
     grid-area: TITLE-1;
+
     
 }
 
@@ -207,6 +215,9 @@ body {
 
 #BUTTON {
     grid-area: SUBMIT-BUTTON;
+    outline: 2px solid rgb(174, 176, 36, );
+    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.105);
+   
 }
 
 
