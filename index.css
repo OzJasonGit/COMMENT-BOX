@@ -204,7 +204,7 @@ body {
     grid-area: COMMENT-AREA;
     width: 100%;
     height: 100%;
-    outline: 2px solid rgb(174, 176, 36, );
+    
     box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
 }
 
@@ -219,7 +219,7 @@ body {
     grid-area: TEXT-AREA-3;
     width: 100%;
     height: 100%;
-    outline: 2px solid rgb(174, 176, 36,);
+    
     box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
 }
 
@@ -242,7 +242,7 @@ body {
     grid-area: TEXT-AREA-2;
     width: 100%;
     height: 100%;
-    outline: 2px solid rgb(174, 176, 36, );
+    
     box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
 }
 
@@ -271,7 +271,7 @@ body {
 
 #SUBMIT-COMMENT {
     grid-area: SUBMIT-BUTTON;
-    outline: 2px solid rgb(174, 176, 36, );
+    
     box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.105);
    
 }
@@ -283,14 +283,6 @@ body {
     width: 100%;
     height: 100%;
 }
-
-
-
-
-
-
-
-
 
 
 
