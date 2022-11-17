@@ -1,20 +1,18 @@
 
 
-
+//
 function render(data){
-    let html = <div class='commentBox'> 
-                    <div class='leftPanelling'> 
-                    </div> 
-
-                    <div class='rightPanel'> 
+    let html = <div id='COMMENT-BOX'> 
+                    
+                    <div id='COMMENTS-APPEND'> 
                         <span> "+ data.name +" </span> 
-                        <div class='date'> "+ data.date +" </div>
-                    <p> "+ data.body +" </p>
+                        <div id='ACTUAL-DATE'> "+ data.date +" </div>
+                        <p> "+ data.body +" </p>
                     </div>
                     
                     <div class='clear'></div>
                 </div>
-    $(#'COMMENTS').append(html);
+    $('COMMENTS').append(html);
 }
 
 
@@ -29,16 +27,19 @@ $(document).ready(function(){
         render(comment[i]);   
     }
 
-    $(#'addcomment').click(function(){       
+    $('SUBMIT-COMMENT').click(function(){       
         let addObject = {
             "name": $('#name').val(),
+            "date": $('#date').val(),
             "email":$('#email').val(),
             "commentText":$('#commentText').val()
         };
         console.log(addObject);
         comment.push(addObject);
         render(addObject);
-
+        $('#name').val('');
+        $('#date').val('dd/mm/yyyy');
+        $('#email').val('');
     });
 
 });

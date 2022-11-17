@@ -164,13 +164,39 @@ body {
 
 }
 
+
+#COMMENTS-APPEND {
+    grid-area: AREA;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 40px 5px 40px 5px auto;
+    grid-row-gap: 0px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "NAME"
+        "."
+        "DATE"
+        "."
+        "BODY";
+}
+
+
+
+
+
+
 #COMMENT-HOLDER {
     grid-area: COMMENTS;
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-rows: 40px 10px 50px 10px 40px 10px 50px;
-    background-color: springgreen;
+    grid-template-rows: 40px 10px auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "NAME"
+            "."
+            "AREA";
     max-width: 700px;
 }
 
@@ -243,7 +269,7 @@ body {
 
 
 
-#BUTTON {
+#SUBMIT-COMMENT {
     grid-area: SUBMIT-BUTTON;
     outline: 2px solid rgb(174, 176, 36, );
     box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.105);
@@ -259,8 +285,17 @@ body {
 }
 
 
-/******************************FONTS***************************/
 
+
+
+
+
+
+
+
+
+
+/******************************FONTS***************************/
 h1 {
     font-family: sofia-pro, sans-serif;
     font-weight: 700;
@@ -290,5 +325,5 @@ p {
     font-style: normal;
     font-size: 1rem;
 }
-
+/******************************FONTS***************************/
 
