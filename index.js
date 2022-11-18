@@ -18,11 +18,12 @@
 
 
 //card
-const elementCard = ([name, email, date, button]) => {
+const elementCard = ([name, email, date, comments, button]) => {
   return {
     name,
     email,
     date,
+    comments,
     button,
 
     documentBody(){
@@ -39,14 +40,15 @@ const elementCard = ([name, email, date, button]) => {
                 
                     <h3 id="LABEL-1><label">Name</label></h3>
                     <form id="TEXT-AREA-1">
-                        <input  type="text"  id="full-name" class="TEXT-AREA"  placeholder="Full Name">${this.name}
+                        <input  type="text"  id="full-name" class="TEXT-AREA"  placeholder="Full Name">
                     </input>                       
                     </form>
                 
 
                     <h3 id="LABEL-2"><label>Email Address</label></h3>
                     <form id="TEXT-AREA-2">
-                        <input  type="text"  id="email-address"  class="TEXT-AREA"  placeholder="darth.vader@deathstar.com"> <p id='result'></p>       
+                        <input  type="text"  id="email-address"  class="TEXT-AREA"  
+                        placeholder="darth.vader@deathstar.com">       
                     </input>                  
                     </form>
 
@@ -59,11 +61,11 @@ const elementCard = ([name, email, date, button]) => {
                 
                     
                     <form id="COMMENT-AREA">
-                        <textarea id="comments" class="TEXT-AREA">
+                        <textarea id="comments" type="text" class="TEXT-AREA">${this.comments}
                         </textarea>   
                     </form>
 
-                    <button id="SUBMIT-COMMENT">
+                    <button onclick="dataCapture" id="SUBMIT-COMMENT">
                         <h3>SUBMIT COMMENT!</h3>                       
                     </button>
 
@@ -78,5 +80,48 @@ const elementCard = ([name, email, date, button]) => {
       };
     };
 
-    let elementsUpdate = elementCard(['Oz Nwachukwu', 'oz.nwachukwu', 'date', 'button']); 
-    document.querySelector("aside.center-holder").innerHTML = elementsUpdate.documentBody();
+function dataCapture () { 
+
+    let name = document.getElementById("full-name").value;
+    let email = document.getElementById("email-address").value;
+    let date = document.getElementById("date").value;
+    let comments = document.getElementById("comments").value;
+
+    
+
+    document.write("Hello!!, " + name);
+}
+    
+
+    
+let elementsUpdate = elementCard([]); 
+document.querySelector("aside.center-holder").innerHTML = elementsUpdate.documentBody();
+
+
+
+
+
+
+
+function dataCapture () {
+
+        
+
+
+        
+
+        let addObject = {'full-name': name,
+                         'email': email,
+                         'date': date,
+                         'comments': comments        
+        };
+
+
+let commentsArr = []
+
+
+}
+
+    
+
+
