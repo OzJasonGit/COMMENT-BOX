@@ -2,9 +2,7 @@
 
 
 
-let inputOne = document.getElementById('inputStatus').value;
 
-let inputTwo = document.getElementById('inputStatus').value;
 
 
 
@@ -18,3 +16,16 @@ function alertBtn() {
 };
 
 submitButton.addEventListener('click', alertBtn);
+
+
+
+
+
+
+
+
+
+let inputOne = document.getElementById('full-name').value;
+
+
+let inputTwo = document.getElementById('email-address').value;
