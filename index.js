@@ -8,33 +8,6 @@
 
 
 
-const submitButton = document.querySelector('#SUBMIT-COMMENT');
-
-
-function alertBtn() {
-    alert('I also love Javascript My name is point Dexter');
-};
-
-submitButton.addEventListener('full-name', 'email-address', 'DATE', 'comments');
-
-
-
-
-
-
-
-
-
-let name = document.getElementById('full-name').value;
-let emailAddress = document.getElementById('email-address').value;
-let date = document.querySelector('DATE').date;
-let message = document.querySelector('comments').value;
-
-
-
-
-
-
 
 
 
@@ -45,15 +18,15 @@ let message = document.querySelector('comments').value;
 
 
 //card
-const detailsCard = (name, email, date, button) => {
+const elementCard = ([name, email, date, button]) => {
   return {
     name,
     email,
     date,
     button,
-    showDetails(){
-    return `<div class="center-holder">
-        <div id="MAIN-CONTAINER">
+
+    documentBody(){
+    return `<div id="MAIN-CONTAINER">
         
             
             <section id="TITLE">               
@@ -66,7 +39,7 @@ const detailsCard = (name, email, date, button) => {
                 
                     <h3 id="LABEL-1><label">Name</label></h3>
                     <form id="TEXT-AREA-1">
-                        <input  type="text"  id="full-name" class="TEXT-AREA"  placeholder="Full Name">
+                        <input  type="text"  id="full-name" class="TEXT-AREA"  placeholder="Full Name">${this.name}
                     </input>                       
                     </form>
                 
@@ -94,18 +67,16 @@ const detailsCard = (name, email, date, button) => {
                         <h3>SUBMIT COMMENT!</h3>                       
                     </button>
 
-
-
-                    
-                    
-                    
+                
 
             <div id="COMMENT-HOLDER">
                 <h3>COMMENTS</h3>
                 <div id="COMMENTS-APPEND">
 
-                </div>
-            </div> `
+        </div>`
         }
       };
     };
+
+    let elementsUpdate = elementCard(['Oz Nwachukwu', 'oz.nwachukwu', 'date', 'button']); 
+    document.querySelector("aside.center-holder").innerHTML = elementsUpdate.documentBody();
