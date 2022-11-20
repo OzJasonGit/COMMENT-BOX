@@ -1,35 +1,25 @@
 
-let commentsArray = [];
-
-function dataCapture (ev) { 
-    ev.preventDefault();
-
-        let dataObject = {
-            fullname: document.getElementById("fullname").value,
-            emailaddress: document.getElementById("emailaddress").value,
-            date: Date.now(),
-            comments: document.getElementById("comments").value
-        }
-
-        commentsArray.push(dataObject);
-        document.querySelector('form').reset();
-
-        console.log('added', {dataObject});
 
 
+const commentArea = document.getElementsByClassName('aside.card');
 
+const fullname = 'Oz Nwachukwu';
+const email = dataObject.emailaddress.value;
+const date = dataObject.date.value;
+const comments = dataObject.comments.value;
 
-        
-  
-document.addEventListener('DOMContentLoaded', () => {
-document.getElementById('SUBMIT-COMMENT').addEventListener('click', dataCapture);
-});
+const commentsUpdate = `
+    <div id="COMMENTS-APPEND">
+        <h3 id="nameResult">${fullname}</h3>
+        <h3 id="emailResult">${email}</h3>
+        <h3 id="dateResult">${date}</h3>
+        <p> id="commentResult">${comments}</p>
+    </div>`;
+            
+commentArea.innerHTML = commentsUpdate;
+   
+    
 
-
-}
-
-
- 
 
 
 
