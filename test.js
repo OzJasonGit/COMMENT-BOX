@@ -51,7 +51,15 @@ const addComment = (ev)=>{
         message: document.getElementById('#COMMENTS').value
     }
 
-    //add
+    //add comment object to comments array
+
+
+    comment.push(comments);
+    document.querySelector('form').reset(); // clear the form for the next entry 
+
+    console.warn('added', {comments});
+    let pre = document.querySelector('#msg pre');
+    pre.textContent = '\n' + JSON.stringify(comments, '\t', 2);
 
 
 }
