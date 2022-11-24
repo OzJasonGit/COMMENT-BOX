@@ -1,6 +1,57 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ensure page is loaded before running function
+document.addEventListener('DOMContentLoaded',()=>{
+    document.getElementById('BUTTON').addEventListener('click',addComment);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const commentArea = document.getElementsByClassName('aside.card');
 
 const fullname = 'Oz Nwachukwu';

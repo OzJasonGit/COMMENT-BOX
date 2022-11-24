@@ -25,8 +25,53 @@ body {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    background-color: rosybrown;
 }
+
+
+
+
+
+
+
+
+
+
+.horizontal {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    display: grid;
+    grid-row-gap: 0px;
+    justify-content: center;
+    grid-template-rows: auto auto auto;
+    -webkit-box-align: start;
+    -webkit-align-items: start;
+    -ms-flex-align: start;
+    align-items: start;
+    -webkit-align-content: start;
+    -ms-flex-line-pack: start;
+    align-content: start;
+    grid-template-columns: 1fr;
+    grid-template-areas: "HEADER"
+                         "COMMENTS"
+                         "FOOTER"
+}
+
+
+
+
+
+
+
+
+
+
+#COMMENT-BOX-MAIN{
+    grid-area: COMMENTS;
+}
+
+
+
 
 
 
@@ -52,7 +97,93 @@ body {
 
 
 
-/*******************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************HEADER CLOCK*******************************************/
+#HEADER {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: auto auto auto;
+    background-color: #2e2e2e;
+    grid-template-areas: ". . ."
+                         ". CLOCK ."
+                         ". . .";
+}
+
+
+
+#CLOCK-CONTAINER {
+    grid-area: CLOCK;
+}
+
+
+
+
+#CONTAINER-TOP {
+    display: flex;
+    width: 100%;
+    background-color: #2e2e2e;
+    justify-content: center;
+}
+
+/****************************************************HEADER CLOCK*******************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************MAIN*************************************************/
 #MAIN-CONTAINER {
     width: 90vw;
     height: auto;
@@ -303,6 +434,117 @@ body {
     width: 100%;
     height: 100%;
 }
+/****************************************************MAIN*************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/****************************************************FOOTER*************************************************/
+#FOOTER {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    grid-column-gap: 40px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: 20px auto 20px;
+    background-color: #2e2e2e;
+    grid-template-areas: ". . ."
+        ". IMAGE ."
+        ". . .";
+}
+
+
+
+
+#CONTAINER-BOTTOM {
+    display: flex;
+    width: 100%;
+    height: auto;
+    background-color: #2e2e2e;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#FOOTER-TEXT {
+    grid-area: TEXT;
+
+
+
+}
+
+
+#FOOTER-HOLDER {
+    grid-area: IMAGE;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "TEXT TEXT IMAGE"
+
+}
+
+
+
+#FOOTER-IMAGE {
+    display: flex;
+    grid-area: IMAGE;
+    justify-content: right;
+}
+/****************************************************FOOTER*************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
