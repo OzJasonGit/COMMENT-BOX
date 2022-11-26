@@ -19,9 +19,7 @@ const detailsCard = (name, email, comment, button) => {
     comment,
     button,
     showDetails(){
-    return `<div></div>
-
-
+    return `
                 <input id="NAME" placeholder="name"></input>
                 <input id="EMAIL" placeholder="oznwachukwu@deathstar.com"></input>
 
@@ -30,30 +28,35 @@ const detailsCard = (name, email, comment, button) => {
                 </textarea>
 
 
-<div class="d-flex">
-<button class="ml-auto" onclick="addToFunc(); eraseText()" type="button">${this.button}</button>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-12">
-<div id="addTask">
-</div>
-</div>
-</div>
-`
+                <div class="d-flex">
+                <button class="ml-auto" onclick="addToFunc(); eraseText()" type="button">
+                    ${this.button}
+                </button>
+                </div>
+                </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="col-12">
+                    <div id="ADD-TASK-NAME"></div>
+                    <div id="ADD-TASK-EMAIL"></div>
+                    <div id="ADD-TASK-COMMENT"></div>
+                  </div>
+                </div>
+                `
   }
 };
 };
 
-let detailsUpdate = detailsCard("Comment Box", "oz.nwachukwu.com", "Update Status");
+let detailsUpdate = detailsCard("Name", "Email", "Comment", "Update Status");
 
 document.querySelector("aside.card").innerHTML = detailsUpdate.showDetails();
 
 const addToFunc = () =>{
    // gets value from main text area
     let userName = detailsUpdate.name;
-    let nameInput = document.getElementById('INPUT-STATUS').value;
+    let nameInput = document.getElementById('NAME').value;
     
      // creates element for the value of nameInput
     let nameTitle = document.createElement("h6");
@@ -65,7 +68,7 @@ const addToFunc = () =>{
     nameStatus.appendChild(textnodeName);
     nameStatus.prepend(nameTitle);
    
-    document.getElementById('addTask').appendChild(nameStatus);
+    document.getElementById('ADD-TASK-NAME').appendChild(nameStatus);
     nameStatus.classList.add("statusBox");
     //userName.classList.add("title"); 
     
@@ -75,19 +78,19 @@ const addToFunc = () =>{
 
   
     let userEmail = detailsUpdate.email;
-    let emailInput = document.getElementById('INPUT-STATUS').value;
+    let emailInput = document.getElementById('EMAIL').value;
     
      // creates element for the value of emailInput
     let emailTitle = document.createElement("h6");
     let emailStatus = document.createElement("p");
   
-    title.innerHTML = userEmail;
+    emailTitle.innerHTML = userEmail;
     //creates a node for the original input
     let textnodeEmail = document.createTextNode(emailInput);
     emailStatus.appendChild(textnodeEmail);
     emailStatus.prepend(emailTitle);
 
-    document.getElementById('addTask').appendChild(emailStatus);
+    document.getElementById('ADD-TASK-EMAIL').appendChild(emailStatus);
     nameStatus.classList.add("statusBox");
     //userName.classList.add("title"); 
 
@@ -103,20 +106,16 @@ const addToFunc = () =>{
     let commentTitle = document.createElement("h6");
     let commentStatus = document.createElement("p");
   
-    title.innerHTML = userComment;
+    commentTitle.innerHTML = userComment;
     //creates a node for the original input
     let textnodeComment = document.createTextNode(commentInput);
     commentStatus.appendChild(textnodeComment);
     commentStatus.prepend(commentTitle);
 
-    document.getElementById('addTask').appendChild(commentStatus);
+    document.getElementById('ADD-TASK-COMMENT').appendChild(commentStatus);
     nameStatus.classList.add("statusBox");
     //userName.classList.add("title"); 
    
-
-    
-    
-
  
 };
 
