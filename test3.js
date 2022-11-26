@@ -10,19 +10,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //card
 const detailsCard = (name, email, comment, button) => {
 
@@ -77,7 +64,7 @@ const addToFunc = () =>{
     let title = document.createElement("h6");
     let status = document.createElement("p");
     let reply = document.createElement("ul");
-    let deleteButton = document.createElement("li");
+   
     
 
    
@@ -89,85 +76,12 @@ const addToFunc = () =>{
     status.appendChild(reply);
 
    
-    reply.appendChild(deleteButton);
+ 
     document.getElementById('addTask').appendChild(status);
     status.classList.add("statusBox");
 
     replyList.classList.add("reply");
-    //userName.classList.add("title");
-  
-
-
-
-
-
-
-
-    //creates a container for the remove button
-    let statusBox = document.createElement("div");
-    //creates a button to delete status
-    let removeTask = document.createElement('input');
-    // adds type of which it is a button
-    removeTask.setAttribute('type', 'button');
-    removeTask.classList.add("removeButton");
-    // sets the buttons value 
-    removeTask.setAttribute("value", "delete");
-    // sets the button next to the status text
-    deleteButton.appendChild(removeTask);
-    //sets the button to remove status
-    removeTask.addEventListener('click', function() {
-        status.parentNode.removeChild(status);
-    }, false);
-    
-  
-
-
-
-
-
-
-
-  //For reply 
-    replyList.addEventListener('click', function() {
-       this.classList.add("likeClicked");
-       let luke = document.getElementById('addTask');
-       let skywalker = document.createElement("textarea");
-       let replied = document.createElement("p");
-       let leia = document.createElement("input");
-       leia.setAttribute('type', 'button');
-       leia.setAttribute("value", "reply");
-       leia.setAttribute("class","removeButton");
-       skywalker.setAttribute("id","pushReply");
-       skywalker.setAttribute("placeholder", "Reply to this comment");
-       luke.appendChild(skywalker);
-       luke.appendChild(leia);
-       luke.appendChild(replied);
-       leia.addEventListener('click', function(){
-         let replyInput =     document.getElementById('pushReply').value;
-         let replyNode = document.createTextNode(replyInput);
-         replied.appendChild(replyNode);
-         if(replyInput === ""){
-         replied.classList.remove("statusBox");
-         skywalker.parentNode.removeChild(skywalker);
-         this.parentNode.removeChild(this);
-         }else{
-         let replyName = document.createElement("h6");
-         let deleteComment = document.createElement("p");
-         deleteComment.innerHTML = "Delete";
-         deleteComment.classList.add("deleteComment");
-         replyName.innerHTML = `${userName} says:`;
-         replied.prepend(replyName);
-         replied.prepend(deleteComment);
-         replied.classList.add("statusBox");
-         skywalker.parentNode.removeChild(skywalker);
-         this.parentNode.removeChild(this);
-           deleteComment.addEventListener('click', function() {
-            replied.parentNode.removeChild(replied);
-           }, false);
-         }
-       }, false);
-    }, false);
-  
+    //userName.classList.add("title");      
 };
 
 
