@@ -2,320 +2,410 @@
 
 
 
+body{
+    background-color: aliceblue;
+}
 
 
 
 
 
 
-
-
-
-
-/*******************************************************************************************************************/
-body {
+#APP-GRID {
     width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    background-color: rosybrown;
-}
-
-
-
-.center-holder {
-    width: 100vw;
     height: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-color: rgb(236, 236, 236);
-}
-/*******************************************************************/
+    grid-row-gap: 60px;
+    grid-template-rows: auto auto auto auto;
 
-
-
-
-
-
-
-
-/*******************************************************************/
-#MAIN-CONTAINER {
-    width: 90vw;
-    height: auto;
-    display: grid;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    place-items: center;
-
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 100px auto 1fr 1fr 100px;
     grid-template-areas: ". . ."
-                         ". MAIN_TITLE ."
-                         ". COMMENT_BOX ."
-                         ". COMMENTS .";
+        ". ICON ."
+        ". . .";
+
 }
 
 
 
-#TITLE {
+
+
+
+
+
+$purple: #3D4399;
+$background: #535F82;
+$muted: #737373;
+$white: #ffffff;
+$button-font-size: 0.6rem;
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapper {
+    background: $background;
+    width: 100%;
+    height: 100vh
+}
+
+.card {
+    display: grid;
     width: 100%;
     height: auto;
-    display: grid;
-    place-items: center;
-    grid-area: MAIN_TITLE;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-template-areas: "TITLE TITLE TITLE ";
-    max-width: 700px;
+    grid-row-gap: 60px;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "NAME"
+                         "EMAIL"
+                         "COMMENT"
+                         "SUBMIT"
+                         "OUTPUT";
+    border-radius: 4px;
+    border: 4.5px solid #555050;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+    width: 90%;
+
+    img {
+        border: 3px solid $purple;
+    }
+
+    h4 {
+        color: $muted;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        letter-spacing: -0.1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    textarea {
+
+        box-sizing: border-box;
+        width: 100%;
+        background: #eee;
+        outline: #2e2e2e;
+        border-style: solid;
+        border-width: 5px;
+        
+        padding: 0.5rem;
+        resize: none;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.19);
+        border-radius: 2px;
+        margin-bottom: 0.3rem;
+        color: $muted;
+    }
+
+    button {
+        background: $purple;
+        color: $white;
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.4rem;
+        font-size: $button-font-size;
+        text-transform: uppercase;
+        font-weight: light;
+        letter-spacing: 2px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background: #989898;
+            transition: all 1s;
+        }
+    }
+
+    ul {
+        border-top: 1px solid $muted;
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 25px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.4;
+            transition: color 3s;
+        }
+    }
+
+    li.like::after {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f164";
+        visibility: visible;
+        font-weight: 900;
+        padding-left: 5px;
+    }
+
+    li.likeClicked {
+        color: $purple;
+
+        &:hover {
+            opacity: 1;
+            cursor: default;
+        }
+    }
+
+    li.reply::after {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f4ad";
+        visibility: visible;
+        font-weight: 900;
+        padding-left: 5px;
+    }
+}
+
+.statusBox {
+    background: #eee;
+    animation-name: fadeIn;
+    animation: fadeIn 1.5s;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $muted;
+    margin-top: 15px;
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+input.removeButton {
+    background: $purple;
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: $button-font-size;
+    text-transform: uppercase;
+    font-weight: light;
+    letter-spacing: 2px;
+
+    &:hover {
+        background: #989898;
+        transition: all 1s;
+    }
+}
+
+.shit {
+    background: #eee;
+    padding: 10px;
+}
+
+
+.ml-auto{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    
+}
+
+.deleteComment {
+    float: right;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.3;
+        transition: all 1s;
+    }
+
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f2ed";
+        visibility: visible;
+        font-weight: 900;
+        float: right;
+        padding-left: 5px;
+    }
+}
+
+
+#NAME{
+    
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+#EMAIL {
+
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+#COMMENT {
+
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+
+
+
+#CONTAINER {
+    height: auto;
+    width: 100%;    
 }
 
 
 #GRID {
-    grid-area: TITLE;
-    width: 100%;
-    height: auto;
-    max-width: 700px;
-}
-
-
-#GRID-CONTAINER {
-    width: 100%;
-    height: auto;
     display: grid;
-
-    grid-area: REACT_ACCORDION;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-template-areas: ". ACCORDION ACCORDION";
-}
-
-
-#HOLDER {
-    width: 100%;
-    height: 100%;
-}
-
-
-#TEXT {
-    grid-area: TEXT;
-    width: 100%;
-    height: auto;   
-}
-
-
-
-#COMMENT_BOX {
-    grid-area: COMMENT_BOX;
-    width: 100%;
     height: auto;
-    display: grid;
-    grid-column-gap: 40px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "MAIN_TITLE MAIN_TITLE MAIN_TITLE";
-    max-width: 700px; 
-    ;
-}
-
-
-#COMMENT_GRID {
-    grid-area: MAIN_TITLE;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 5px 50px 5px 40px 5px 50px 5px 40px 5px 50px 10px 300px 10px 70px 100px 300px;
-    grid-row-gap: 0px;    
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "TITLE-1" 
-    "."
-    "TEXT-AREA-1"
-    "."
-    "TITLE-2"
-    "."
-    "TEXT-AREA-2"
-    "."
-    "TITLE-3"
-    "."
-    "TEXT-AREA-3"
-    "."
-    "COMMENT-AREA"
-    "."
-    "SUBMIT-BUTTON"
-    "."
-    "COMMENTS";
-
-}
-
-
-#COMMENTS-APPEND {
-    grid-area: AREA;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 5px 40px 5px auto;
-    grid-row-gap: 0px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "NAME"
-        "."
-        "DATE"
-        "."
-        "BODY";
-}
-
-
-
-
-
-
-#COMMENT-HOLDER {
-    grid-area: COMMENTS;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 10px auto;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-            "NAME"
-            "."
-            "AREA";
-    max-width: 700px;
-}
-
-#COMMENT-AREA {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
+    width: 10
     
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-#COMMENTS {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
-}
-
-
-#TEXT-AREA-3 {
-    grid-area: TEXT-AREA-3;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-
-
-
-
-#TEXT-AREA-1 {
-    grid-area: TEXT-AREA-1;
-    width: 100%;
-    height: 100%;
-    outline: 2px solid rgb(174, 176, 36,);
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-
-}
-
-
-
-#TEXT-AREA-2 {
-    grid-area: TEXT-AREA-2;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-
-
-#LABEL-1 {
-    grid-area: TITLE-1;
-
-    
-}
-
-
-#LABEL-2 {
-    grid-area: TITLE-2;
-}
-
-
-#DATE {
-    grid-area: TITLE-3;
-}
 
 
 
 
 
 
-#SUBMIT-COMMENT {
-    grid-area: SUBMIT-BUTTON;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.105);
-   
-}
-
-
-
-.TEXT-AREA {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
-}
 
 
 
 
-/******************************FONTS***************************/
-h1 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 5rem;   
-}
 
 
-h2 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2.5rem;
-}
 
 
-h3 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1 rem;
-}
 
-p {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1rem;
-}
-/******************************FONTS***************************/
+
+
+/******************************FONTS************************************************************************/
+    h1 {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 6rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+    #CLOCK {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem;
+        color: #d9d9d9;
+        text-align: left;
+        overflow-wrap: break-word;
+
+    }
+
+
+    #DATE {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #d9d9d9;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    h2 {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+
+    h3 {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.25rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+    .FT {
+        font-family: sofia-pro, sans-serif;
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #d9d9d9;
+        overflow-wrap: break-word;
+    }
+
+
+    p {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+
+    .main-heading {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        overflow-wrap: break-word;
+    }
+
+
+    .github {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        overflow-wrap: break-word;
+    }
+
+
+    .text-holder {
+        grid-area: TITLE;
+        width: 100%;
+        height: auto overflow-wrap: break-word;
+    }
+
+
+
+    .main-heading-right {
+        text-align: right;
+    }
+
+    /******************************FONTS************************************************************************/
+
 
