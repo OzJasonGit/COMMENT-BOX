@@ -9,574 +9,204 @@
 
 
 
-
-
-
-/*******************************************************************************************************************/
-body {
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-}
-
-
-
-
-
-
-
-
-
-
-.horizontal {
+#APP-GRID {
     width: 100%;
     height: auto;
-    max-height: none;
-    display: grid;
-    grid-row-gap: 0px;
-    justify-content: center;
-    grid-template-rows: auto auto auto;
-    -webkit-box-align: start;
-    -webkit-align-items: start;
-    -ms-flex-align: start;
-    align-items: start;
-    -webkit-align-content: start;
-    -ms-flex-line-pack: start;
-    align-content: start;
-    grid-template-columns: 1fr;
-    grid-template-areas: "HEADER"
-                         "COMMENTS"
-                         "FOOTER"
-}
-
-
-
-
-
-
-
-
-
-
-#COMMENT-BOX-MAIN{
-    grid-area: COMMENTS;
-}
-
-
-
-
-
-
-.center-holder {
-    width: 100vw;
-    height: auto;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    background-color: rgb(236, 236, 236);
-}
-/*******************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/****************************************************HEADER CLOCK*******************************************/
-#HEADER {
-    width: 100vw;
-    height: auto;
-    display: grid;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-
-    grid-column-gap: 40px;
     grid-row-gap: 60px;
-    grid-template-columns: 1fr 8fr 1fr;
-    grid-template-rows: auto auto auto;
-    background-color: #2e2e2e;
+    grid-template-rows: auto auto auto auto;
+
     grid-template-areas: ". . ."
-                         ". CLOCK ."
-                         ". . .";
-}
+        ". ICON ."
+        ". . .";
 
-
-
-#CLOCK-CONTAINER {
-    grid-area: CLOCK;
 }
 
 
 
 
-#CONTAINER-TOP {
-    display: flex;
+
+
+
+
+$purple: #3D4399;
+$background: #535F82;
+$muted: #737373;
+$white: #ffffff;
+$button-font-size: 0.6rem;
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#wrapper {
+    background: $background;
     width: 100%;
-    background-color: #2e2e2e;
-    justify-content: center;
+    height: 100vh
 }
-
-/****************************************************HEADER CLOCK*******************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/****************************************************MAIN*************************************************/
-#MAIN-CONTAINER {
-    width: 90vw;
-    height: auto;
-    display: grid;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    place-items: center;
-
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: 100px auto 1fr 1fr 100px;
-    grid-template-areas: ". . ."
-                         ". MAIN_TITLE ."
-                         ". COMMENT_BOX ."
-                         ". COMMENTS .";
-}
-
-
-
-#TITLE {
-    width: 100%;
-    height: auto;
-    display: grid;
-    place-items: center;
-    grid-area: MAIN_TITLE;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-template-areas: "TITLE TITLE TITLE ";
-    max-width: 700px;
-}
-
-
-#GRID {
-    grid-area: TITLE;
-    width: 100%;
-    height: auto;
-    max-width: 700px;
-}
-
-
-#GRID-CONTAINER {
-    width: 100%;
-    height: auto;
-    display: grid;
-
-    grid-area: REACT_ACCORDION;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 40px;
-    grid-template-areas: ". ACCORDION ACCORDION";
-}
-
-
-#HOLDER {
-    width: 100%;
-    height: 100%;
-}
-
-
-#TEXT {
-    grid-area: TEXT;
-    width: 100%;
-    height: auto;   
-}
-
-
-
-#COMMENT_BOX {
-    grid-area: COMMENT_BOX;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-column-gap: 40px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "MAIN_TITLE MAIN_TITLE MAIN_TITLE";
-    max-width: 700px; 
-    ;
-}
-
-
-#COMMENT_GRID {
-    grid-area: MAIN_TITLE;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 5px 50px 5px 40px 5px 50px 5px 40px 5px 50px 10px 300px 10px 70px 100px 300px;
-    grid-row-gap: 0px;    
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-    "TITLE-1" 
-    "."
-    "TEXT-AREA-1"
-    "."
-    "TITLE-2"
-    "."
-    "TEXT-AREA-2"
-    "."
-    "TITLE-3"
-    "."
-    "TEXT-AREA-3"
-    "."
-    "COMMENT-AREA"
-    "."
-    "SUBMIT-BUTTON"
-    "."
-    "COMMENTS";
-
-}
-
-
-#COMMENTS-APPEND {
-    grid-area: AREA;
-    border: 5px;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 5px 40px 5px auto;
-    grid-row-gap: 0px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "NAME"
-        "."
-        "DATE"
-        "."
-        "BODY";
-}
-
-
-
-
-
-
-#COMMENT-HOLDER {
-    grid-area: COMMENTS;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-rows: 40px 10px auto;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-            "NAME"
-            "."
-            "AREA";
-    max-width: 700px;
-}
-
-#COMMENT-AREA {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-#COMMENTS {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
-}
-
-
-#TEXT-AREA-3 {
-    grid-area: TEXT-AREA-3;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-
-
-
-
-#TEXT-AREA-1 {
-    grid-area: TEXT-AREA-1;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-
-}
-
-
-
-#TEXT-AREA-2 {
-    grid-area: TEXT-AREA-2;
-    width: 100%;
-    height: 100%;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.299);
-}
-
-
-
-#LABEL-1 {
-    grid-area: TITLE-1;
-
-    
-}
-
-
-#LABEL-2 {
-    grid-area: TITLE-2;
-}
-
-
-#DATE {
-    grid-area: TITLE-3;
-}
-
-
-
-#nameResult {
-    grid-area: NAME;
-}
-
-
-#dateResult {
-    grid-area: DATE;
-}
-
-#commentResult {
-    grid-area: BODY;
-}
-
-
-
-#SUBMIT-COMMENT {
-    grid-area: SUBMIT-BUTTON;
-    
-    box-shadow: 1px 1px 8px 1px rgba(174, 176, 36, 0.105);
-   
-}
-
-
-
-.TEXT-AREA {
-    grid-area: COMMENT-AREA;
-    width: 100%;
-    height: 100%;
-}
-
 
 .card {
-    grid-area: AREA;
-    width: 100%;
-    height: 100%;
-}
-/****************************************************MAIN*************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/****************************************************FOOTER*************************************************/
-#FOOTER {
-    width: 100vw;
-    height: auto;
     display: grid;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-
-    grid-column-gap: 40px;
-    grid-row-gap: 20px;
-    grid-template-columns: 1fr 8fr 1fr;
-    grid-template-rows: 20px auto 20px;
-    background-color: #2e2e2e;
-    grid-template-areas: ". . ."
-        ". IMAGE ."
-        ". . .";
-}
-
-
-
-
-#CONTAINER-BOTTOM {
-    display: flex;
     width: 100%;
     height: auto;
-    background-color: #2e2e2e;
-    justify-content: center;
-    align-items: center;
+    grid-row-gap: 60px;
+    grid-template-rows: auto auto auto auto;
+    border-radius: 4px;
+    border: 4px solid #2e2e2e;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem;
+    width: 90%;
+
+    img {
+        border: 3px solid $purple;
+    }
+
+    h4 {
+        color: $muted;
+        font-family: Helvetica, sans-serif;
+        font-weight: bold;
+        letter-spacing: -0.1rem;
+        padding-bottom: 0.5rem;
+    }
+
+    textarea {
+        width: 100%;
+        background: #eee;
+        outline: none;
+        border: none;
+        padding: 0.5rem;
+        resize: none;
+        box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.19);
+        border-radius: 2px;
+        margin-bottom: 0.3rem;
+        color: $muted;
+    }
+
+    button {
+        background: $purple;
+        color: $white;
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.4rem;
+        font-size: $button-font-size;
+        text-transform: uppercase;
+        font-weight: light;
+        letter-spacing: 2px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background: #989898;
+            transition: all 1s;
+        }
+    }
+
+    ul {
+        border-top: 1px solid $muted;
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 25px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.4;
+            transition: color 3s;
+        }
+    }
+
+    li.like::after {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f164";
+        visibility: visible;
+        font-weight: 900;
+        padding-left: 5px;
+    }
+
+    li.likeClicked {
+        color: $purple;
+
+        &:hover {
+            opacity: 1;
+            cursor: default;
+        }
+    }
+
+    li.reply::after {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f4ad";
+        visibility: visible;
+        font-weight: 900;
+        padding-left: 5px;
+    }
 }
 
-
-
-#FOOTER-TEXT {
-    grid-area: TEXT;
-
-
-
-}
-
-
-#FOOTER-HOLDER {
-    grid-area: IMAGE;
-    display: grid;
-    grid-column-gap: 40px;
-    grid-row-gap: 40px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "TEXT TEXT IMAGE"
+.statusBox {
+    background: #eee;
+    padding: 1rem;
+    animation-name: fadeIn;
+    animation: fadeIn 1.5s;
+    border-radius: 5px;
+    font-size: 14px;
+    color: $muted;
+    margin-top: 15px;
 
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
 
-
-#FOOTER-IMAGE {
-    display: flex;
-    grid-area: IMAGE;
-    justify-content: right;
-}
-/****************************************************FOOTER*************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/******************************FONTS***************************/
-h1 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 5rem;   
+    to {
+        opacity: 1;
+    }
 }
 
+input.removeButton {
+    background: $purple;
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: $button-font-size;
+    text-transform: uppercase;
+    font-weight: light;
+    letter-spacing: 2px;
 
-h2 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 2.5rem;
+    &:hover {
+        background: #989898;
+        transition: all 1s;
+    }
 }
 
-
-h3 {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
+.shit {
+    background: #eee;
+    padding: 10px;
 }
 
-p {
-    font-family: sofia-pro, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1rem;
-}
-/******************************FONTS***************************/
+.deleteComment {
+    float: right;
+    cursor: pointer;
 
+    &:hover {
+        opacity: 0.3;
+        transition: all 1s;
+    }
+
+    &::before {
+        font-family: 'Font Awesome 5 Free';
+        content: "\f2ed";
+        visibility: visible;
+        font-weight: 900;
+        float: right;
+        padding-left: 5px;
+    }
+}
