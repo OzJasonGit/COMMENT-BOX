@@ -19,7 +19,7 @@ const detailsCard = (name, email, comment, button) => {
     comment,
     button,
     showDetails(){
-    return `<h4>${this.name}</h4>
+    return `<div></div>
 
 
                 <input id="NAME" placeholder="name"></input>
@@ -55,29 +55,69 @@ const addToFunc = () =>{
     let userName = detailsUpdate.name;
     let nameInput = document.getElementById('INPUT-STATUS').value;
     
-
      // creates element for the value of nameInput
-    let title = document.createElement("h6");
-    let status = document.createElement("p");
+    let nameTitle = document.createElement("h6");
+    let nameStatus = document.createElement("p");
   
-   
-    
-
-   
-    title.innerHTML = userName;
+    nameTitle.innerHTML = userName;
     //creates a node for the original input
     let textnodeName = document.createTextNode(nameInput);
-    status.appendChild(textnodeName);
-    status.prepend(title);
+    nameStatus.appendChild(textnodeName);
+    nameStatus.prepend(nameTitle);
+   
+    document.getElementById('addTask').appendChild(nameStatus);
+    nameStatus.classList.add("statusBox");
+    //userName.classList.add("title"); 
+    
+    
+
+
+
+  
+    let userEmail = detailsUpdate.email;
+    let emailInput = document.getElementById('INPUT-STATUS').value;
+    
+     // creates element for the value of emailInput
+    let emailTitle = document.createElement("h6");
+    let emailStatus = document.createElement("p");
+  
+    title.innerHTML = userEmail;
+    //creates a node for the original input
+    let textnodeEmail = document.createTextNode(emailInput);
+    emailStatus.appendChild(textnodeEmail);
+    emailStatus.prepend(emailTitle);
+
+    document.getElementById('addTask').appendChild(emailStatus);
+    nameStatus.classList.add("statusBox");
+    //userName.classList.add("title"); 
+
+
+
+
+
+
+    let userComment = detailsUpdate.comment;
+    let commentInput = document.getElementById('INPUT-STATUS').value;
+    
+     // creates element for the value of commentInput
+    let commentTitle = document.createElement("h6");
+    let commentStatus = document.createElement("p");
+  
+    title.innerHTML = userComment;
+    //creates a node for the original input
+    let textnodeComment = document.createTextNode(commentInput);
+    commentStatus.appendChild(textnodeComment);
+    commentStatus.prepend(commentTitle);
+
+    document.getElementById('addTask').appendChild(commentStatus);
+    nameStatus.classList.add("statusBox");
+    //userName.classList.add("title"); 
    
 
-   
+    
+    
+
  
-    document.getElementById('addTask').appendChild(status);
-    status.classList.add("statusBox");
-
-    replyList.classList.add("reply");
-    //userName.classList.add("title");      
 };
 
 
