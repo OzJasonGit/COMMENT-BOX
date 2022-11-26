@@ -162,7 +162,6 @@ $button-font-size: 0.6rem;
 
 .statusBox {
     background: #eee;
-    padding: 1rem;
     animation-name: fadeIn;
     animation: fadeIn 1.5s;
     border-radius: 5px;
