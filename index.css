@@ -203,6 +203,14 @@ input.removeButton {
     padding: 10px;
 }
 
+
+.ml-auto{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    
+}
+
 .deleteComment {
     float: right;
     cursor: pointer;
@@ -268,7 +276,136 @@ input.removeButton {
 #GRID {
     display: grid;
     height: auto;
-    width: 100%;
-}
+    width: 10
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************************FONTS************************************************************************/
+    h1 {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 6rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+    #CLOCK {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 5rem;
+        color: #d9d9d9;
+        text-align: left;
+        overflow-wrap: break-word;
+
+    }
+
+
+    #DATE {
+        font-family: sofia-pro, sans-serif;
+        padding-top: 0px;
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #d9d9d9;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    h2 {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+
+    h3 {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.25rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+    .FT {
+        font-family: sofia-pro, sans-serif;
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #d9d9d9;
+        overflow-wrap: break-word;
+    }
+
+
+    p {
+        font-family: sofia-pro, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1rem;
+        color: #2e2e2e;
+        overflow-wrap: break-word;
+    }
+
+
+
+    .main-heading {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        overflow-wrap: break-word;
+    }
+
+
+    .github {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        overflow-wrap: break-word;
+    }
+
+
+    .text-holder {
+        grid-area: TITLE;
+        width: 100%;
+        height: auto overflow-wrap: break-word;
+    }
+
+
+
+    .main-heading-right {
+        text-align: right;
+    }
+
+    /******************************FONTS************************************************************************/
 
 

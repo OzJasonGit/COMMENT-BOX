@@ -49,8 +49,7 @@ const detailsCard = (name, email, comment, button) => {
                     <div id="ADD-TASK-EMAIL" class="output"></div>
                     <div id="ADD-TASK-COMMENT" class="output"></div>
                   </div>
-                </div>
-             
+                </div>             
                 `
   }
 };
@@ -66,7 +65,7 @@ const addToFunc = () =>{
     let nameInput = document.getElementById('NAME').value;
     
      // creates element for the value of nameInput
-    let nameTitle = document.createElement("h6");
+    let nameTitle = document.createElement("h3");
     let nameStatus = document.createElement("p");
   
     nameTitle.innerHTML = userName;
@@ -88,7 +87,7 @@ const addToFunc = () =>{
     let emailInput = document.getElementById('EMAIL').value;
     
      // creates element for the value of emailInput
-    let emailTitle = document.createElement("h6");
+    let emailTitle = document.createElement("h3");
     let emailStatus = document.createElement("p");
   
     emailTitle.innerHTML = userEmail;
@@ -110,7 +109,7 @@ const addToFunc = () =>{
     let commentInput = document.getElementById('COMMENT').value;
     
      // creates element for the value of commentInput
-    let commentTitle = document.createElement("h6");
+    let commentTitle = document.createElement("h3");
     let commentStatus = document.createElement("p");
   
     commentTitle.innerHTML = userComment;
