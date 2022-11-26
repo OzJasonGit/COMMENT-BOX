@@ -24,17 +24,25 @@
 
 
 //card
-const detailsCard = (name, email, button) => {
+const detailsCard = (name, email, comment, button) => {
 
   return {
     name,
     email,
+    comment,
     button,
     showDetails(){
     return `<h4>${this.name}</h4>
+
+
                 <input id="NAME" placeholder="name"></input>
                 <input id="EMAIL" placeholder="oznwachukwu@deathstar.com"></input>
-      <textarea type="text" id="inputStatus" placeholder="What's on your mind?"></textarea>
+
+
+                <textarea type="text" id="INPUT-STATUS" placeholder="What's on your mind?">
+                </textarea>
+
+
 <div class="d-flex">
 <button class="ml-auto" onclick="addToFunc(); eraseText()" type="button">${this.button}</button>
 </div>
@@ -58,23 +66,29 @@ document.querySelector("aside.card").innerHTML = detailsUpdate.showDetails();
 const addToFunc = () =>{
    // gets value from main text area
     let userName = detailsUpdate.name;
-    let input = document.getElementById('inputStatus').value;
-     // creates element for the value of input
+    let nameInput = document.getElementById('INPUT-STATUS').value;
+
+    //gets value from email input
+    let userEmail = detailsUpdate.email;
+    let emailInput = document.getElementById('EMAIL').value;
+    
+
+     // creates element for the value of nameInput
     let title = document.createElement("h6");
     let status = document.createElement("p");
     let reply = document.createElement("ul");
     let deleteButton = document.createElement("li");
-    let replyList = document.createElement("li");
+    
 
-    replyList.innerHTML = "Add Comment";
+   
     title.innerHTML = userName;
   //creates a node for the original input
-    let textnode = document.createTextNode(input);
+    let textnode = document.createTextNode(nameInput);
     status.appendChild(textnode);
     status.prepend(title);
     status.appendChild(reply);
 
-    reply.appendChild(replyList);
+   
     reply.appendChild(deleteButton);
     document.getElementById('addTask').appendChild(status);
     status.classList.add("statusBox");
