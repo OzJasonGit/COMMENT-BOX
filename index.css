@@ -2,7 +2,9 @@
 
 
 
-
+body{
+    background-color: aliceblue;
+}
 
 
 
@@ -51,8 +53,14 @@ $button-font-size: 0.6rem;
     height: auto;
     grid-row-gap: 60px;
     grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas: "NAME"
+                         "EMAIL"
+                         "COMMENT"
+                         "SUBMIT"
+                         "OUTPUT";
     border-radius: 4px;
-    border: 4px solid #2e2e2e;
+    border: 4.5px solid #555050;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -73,10 +81,14 @@ $button-font-size: 0.6rem;
     }
 
     textarea {
+
+        box-sizing: border-box;
         width: 100%;
         background: #eee;
-        outline: none;
-        border: none;
+        outline: #2e2e2e;
+        border-style: solid;
+        border-width: 5px;
+        
         padding: 0.5rem;
         resize: none;
         box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.19);
@@ -210,3 +222,54 @@ input.removeButton {
         padding-left: 5px;
     }
 }
+
+
+#NAME{
+    
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+#EMAIL {
+
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+#COMMENT {
+
+    height: auto;
+    border-radius: 3px;
+    border: 1px solid #2e2e2e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-width: 1.5px;
+}
+
+
+
+
+#CONTAINER {
+    height: auto;
+    width: 100%;    
+}
+
+
+#GRID {
+    display: grid;
+    height: auto;
+    width: 100%;
+}
+
+

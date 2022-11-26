@@ -30,7 +30,7 @@ const detailsCard = (name, email, comment, button) => {
                 <input id="EMAIL" placeholder="oznwachukwu@deathstar.com"></input>
 
 
-                <textarea type="text" id="INPUT-STATUS" placeholder="What's on your mind?">
+                <textarea type="text" id="COMMENT" placeholder="What's on your mind?">
                 </textarea>
 
 
@@ -43,11 +43,11 @@ const detailsCard = (name, email, comment, button) => {
                 </div>
 
 
-                <div class="row">
-                  <div class="col-12">
-                    <div id="ADD-TASK-NAME"></div>
-                    <div id="ADD-TASK-EMAIL"></div>
-                    <div id="ADD-TASK-COMMENT"></div>
+                <div id="CONTAINER" class="row">
+                  <div id="GRID" class="col-12">
+                    <div id="ADD-TASK-NAME" class="output"></div>
+                    <div id="ADD-TASK-EMAIL" class="output"></div>
+                    <div id="ADD-TASK-COMMENT" class="output"></div>
                   </div>
                 </div>
              
@@ -56,7 +56,7 @@ const detailsCard = (name, email, comment, button) => {
 };
 };
 
-let detailsUpdate = detailsCard("Name", "Email", "Comment", "Update Status");
+let detailsUpdate = detailsCard("Name", "Email", "Comment", "SUBMIT COMMENT!");
 
 document.querySelector("aside.card").innerHTML = detailsUpdate.showDetails();
 
@@ -107,7 +107,7 @@ const addToFunc = () =>{
 
 
     let userComment = detailsUpdate.comment;
-    let commentInput = document.getElementById('INPUT-STATUS').value;
+    let commentInput = document.getElementById('COMMENT').value;
     
      // creates element for the value of commentInput
     let commentTitle = document.createElement("h6");
@@ -122,9 +122,18 @@ const addToFunc = () =>{
     document.getElementById('ADD-TASK-COMMENT').appendChild(commentStatus);
     nameStatus.classList.add("statusBox");
     //userName.classList.add("title"); 
+
+
+
+    
+    
+
    
  
 };
+
+
+
 
 
 
