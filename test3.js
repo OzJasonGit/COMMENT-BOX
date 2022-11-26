@@ -54,26 +54,22 @@ const addToFunc = () =>{
    // gets value from main text area
     let userName = detailsUpdate.name;
     let nameInput = document.getElementById('INPUT-STATUS').value;
-
-    //gets value from email input
-    let userEmail = detailsUpdate.email;
-    let emailInput = document.getElementById('EMAIL').value;
     
 
      // creates element for the value of nameInput
     let title = document.createElement("h6");
     let status = document.createElement("p");
-    let reply = document.createElement("ul");
+  
    
     
 
    
     title.innerHTML = userName;
-  //creates a node for the original input
-    let textnode = document.createTextNode(nameInput);
-    status.appendChild(textnode);
+    //creates a node for the original input
+    let textnodeName = document.createTextNode(nameInput);
+    status.appendChild(textnodeName);
     status.prepend(title);
-    status.appendChild(reply);
+   
 
    
  
@@ -85,7 +81,3 @@ const addToFunc = () =>{
 };
 
 
-const eraseText = () => {
-  //erases placeholder text in textarea
-    document.getElementById("inputStatus").value = "";
-};
